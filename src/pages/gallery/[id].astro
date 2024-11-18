@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import "../quick.css";
+import { strictObject } from "astro:schema";
+import { getImages } from "../../utils/albums";
+import { isTemplateExpression } from "typescript";
+import "../quick.css";
+
+export async function getStaticPaths() {
+  const albums = await getCollection("albums");
+
+  const paths = Object.values(albums).map((album) => {
+    return {
+      params: {
+        id: album.id,
+      },
+      props: {
+        album,
+      },
+    };
+  });
+
+  return paths;
+}
+const { album } = Astro.props;
+const albumImages = await getImages(album.id);
+---
+
+<Layout title={album.data.title}>
+  <div class="p-8">
+    <h1 class="text-5xl text-center my-8 text-neutral-200">{album.id.toUpperCase().split("").join(" ")}</h1>
+    <div class="content-center mx-auto container columns-3">
+      {
+        albumImages.map((item) => (
+          <Image src={item} alt="bruh" format="avif" quality="mid" class="mx-5 mb-4 " loading="lazy" />
+        ))
+      }
+    </div>
+  </div>
+</Layout>

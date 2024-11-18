@@ -1,3 +1,18 @@
 .font{
     font-family: 'Poppins-Regular';
 }
+
+.album-image{
+    object-fit:cover;
+    aspect-ratio: 3/2;
+}
+
+.test {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: repeat(auto-fill, 30%); */
+    grid-template-rows: repeat(auto-fill, minmax(0%, auto));
+    grid-row-gap: .5em;
+    grid-column-gap: 1em;
+  }

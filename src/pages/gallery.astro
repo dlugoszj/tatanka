@@ -9,21 +9,21 @@ const albums = await getCollection("albums");
 <Layout title="Tatas Photos.">
   <div class="p-8">
     <h1 class="text-5xl text-center my-8 text-neutral-200">G A L L E R Y</h1>
-    <div class="mx-auto container grid grid-cols-2 gap-8">
+    <div class="mx-auto container grid grid-cols-3 gap-4">
       {
         albums.map((item) => (
-          <a href={`/gallery/${item.id}`} class="group transition-all mb-8 block">
+          <a href={`/gallery/${item.id}`} class="group transition-all mb-2 block">
             <Image
               src={item.data.cover}
               alt={item.data.title}
               format="avif"
-              width="1000"
-              height="1000"
               quality="mid"
-              class:list={["rounded-lg transition-all", "group-hover:shadow-lg group-hover:opacity-90"]}
+              height="683"
+              width="1024"
+              class="album-image"
             />
             <div class="mt-4 text-center text-neutral-200">
-              <strong class="font-normal">{item.data.title}</strong>
+              <strong>{item.data.title}</strong>
               <p class="text-xs">{item.data.description}</p>
             </div>
           </a>
