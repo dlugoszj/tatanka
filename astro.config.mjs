@@ -9,4 +9,5 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [react(), tailwind()],
   site: 'https://dlugoszj.github.io',
+  base: 'tatanka',
 });
