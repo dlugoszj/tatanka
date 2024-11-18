@@ -12,7 +12,7 @@ const albums = await getCollection("albums");
     <div class="mx-auto container grid grid-cols-3 gap-4">
       {
         albums.map((item) => (
-          <a href={`/gallery/${item.id}`} class="group transition-all mb-2 block">
+          <a href={`/tatanka/gallery/${item.id}`} class="group transition-all mb-2 block">
             <Image
               src={item.data.cover}
               alt={item.data.title}
