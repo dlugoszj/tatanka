@@ -26,17 +26,21 @@ export async function getStaticPaths() {
 }
 const { album } = Astro.props;
 const albumImages = await getImages(album.id);
+
+//{album.id.toUpperCase().split("").join(" ")}
 ---
 
 <Layout title={album.data.title}>
-  <div class="p-8">
-    <h1 class="text-5xl text-center my-8 text-neutral-200">{album.id.toUpperCase().split("").join(" ")}</h1>
-    <div class="content-center mx-auto container columns-3">
-      {
-        albumImages.map((item) => (
-          <Image src={item} alt="bruh" format="avif" quality="mid" class="mx-5 mb-4 " loading="lazy" />
-        ))
-      }
+  <div class="">
+    <div class="text-5xl text-center my-8 text-neutral-200">{album.id.toUpperCase().split("").join(" ")}</div>
+    <div class="content-center">
+      <div class="content-center mx-auto container columns-3">
+        {
+          albumImages.map((item) => (
+            <Image src={item} alt="bruh" format="avif" quality="mid" class="imagePadding" loading="lazy" />
+          ))
+        }
+      </div>
     </div>
   </div>
 </Layout>

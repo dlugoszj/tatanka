@@ -7,12 +7,9 @@
     aspect-ratio: 3/2;
 }
 
-.test {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /* grid-template-rows: repeat(auto-fill, 30%); */
-    grid-template-rows: repeat(auto-fill, minmax(0%, auto));
-    grid-row-gap: .5em;
-    grid-column-gap: 1em;
+.imagePadding{
+    padding-bottom: 1rem;
+    /* margin-left: 1.25rem;
+    margin-right: 1.25rem; */
+    display: inline-block;
   }
