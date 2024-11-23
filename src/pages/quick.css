@@ -5,11 +5,18 @@
 .album-image{
     object-fit:cover;
     aspect-ratio: 3/2;
+    border-radius: 10px;
 }
 
 .imagePadding{
     padding-bottom: 1rem;
-    /* margin-left: 1.25rem;
-    margin-right: 1.25rem; */
     display: inline-block;
   }
+
+.albumHeading{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color:white;
+    text-align: center;
+    font-size:calc(.5em + 2.6vw);
+}

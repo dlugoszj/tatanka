@@ -32,9 +32,9 @@ const albumImages = await getImages(album.id);
 
 <Layout title={album.data.title}>
   <div class="">
-    <div class="text-5xl text-center my-8 text-neutral-200">{album.id.toUpperCase().split("").join(" ")}</div>
+    <div class="albumHeading">{album.id.toUpperCase().split("").join(" ")}</div>
     <div class="content-center">
-      <div class="content-center mx-auto container columns-3">
+      <div class="content-center mx-4 columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5">
         {
           albumImages.map((item) => (
             <Image src={item} alt="bruh" format="avif" quality="mid" class="imagePadding" loading="lazy" />

@@ -19,15 +19,35 @@
 .krzysztof{
     float:left;
     color:white;
-    font-size:3em;
+    font-size:calc(.5em + 2.6vw);
+    /* calc(.5em + 2.6vw); */
 }
 
 .other-menu-opts{
     float:right;
-    font-size:1.5em;
+    font-size:calc(.5em + 1.1vw);
+    /* calc(.5em + 1.1vw); */
 }
 
 a {
     text-decoration: none;
     color:white;
+}
+
+.lg-view{
+    display:inline-block;
+ }
+ 
+.sm-view{
+    display:none;
+ }
+
+ @media screen and (max-width: 500px) {
+    .lg-view{
+       display:none;
+    }
+
+    .sm-view{
+       display:inline-block;
+    }
 }
